@@ -6,7 +6,7 @@ const proxy = require('http-proxy-middleware')
 
 app.use('/:productId/reviews/*', proxy({target: 'http://localhost:3002'}));
 
-app.use('/:id+', express.static(path.join(__dirname, '/../public')));
+app.use('/:id', express.static(path.join(__dirname, '/../public')));
 
 app.use('/random/*', proxy({target: 'http://localhost:3003'}));
 
